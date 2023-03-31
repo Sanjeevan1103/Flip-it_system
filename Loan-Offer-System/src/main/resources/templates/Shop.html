@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<Style>
+  .btnAddCart{
+
+    text-align:center;
+
+  }
+.button {
+  border: none;
+  width:50%;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button1 {background-color: #4CAF50;} /* Green */
+.container{
+width:90%;
+height:auto;
+background:#fff;
+display:flex;
+flex-direction:row;
+justify-content:space-around;
+}
+
+.static{
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  padding: 5px;
+  background-color: #cae8ca;
+  border: 2px solid #4CAF50;
+}
+ .box{
+ width:80%;
+ background:#fff;
+ padding:20px;
+ margin:10px;
+ box-sizing:border-box;
+ }
+ .box1{
+  width:40%;
+max-height:600px;
+ background:#f1f1f1;
+ padding:20px;
+ margin:10px;
+ margin-top:50px;
+ box-sizing:border-box;
+ }
+ .card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+.hrstyle{
+color:#000;
+width:1px;
+}
+</Style>
+<body>
+<div>
+  <h2>Filterable Table</h2>
+  <div class="container">
+
+
+    <div class="box" >
+      <p>Type something in the input field to search the table for first names, last names or emails:</p>
+      <input class="form-control" id="myInput" type="text" placeholder="Search..">
+      <br>
+      <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+          <th></th>
+          <th>Image</th>
+          <th>Product Name</th>
+          <th>Price</th>
+          <th>Qty</th>
+
+        </tr>
+        </thead>
+        <tbody id="myTable">
+        <tr>
+          <td><input type="checkbox" id="prodImg" name="prodImg" value="Galaxy BudsLive"></td>
+          <td><img src="Image/buds1.jpg"  width="100" alt="" width=""></td>
+          <td>Sanjeevan</td>
+          <td>Vijayakumar</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" id="prodImg1" name="prodImg" value="Galaxy BudsLive"></td>
+          <td><img src="Image/buds2.jpg" width="100" alt="" width=""></td>
+          <td>Sanjeevan</td>
+          <td>Vijayakumar</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" id="prodImg2" name="prodImg" value="Galaxy BudsLive"></td>
+          <td><img src="Image/MJ503.png"  width="100" alt="" width=""></td>
+          <td>Sanjeevan</td>
+          <td>Vijayakumar</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" id="prodImg3" name="prodImg" value="Galaxy BudsLive"></td>
+          <td><img src="Image/31umOmJ8YCL.jpg"  width="100"  alt="" width=""></td>
+          <td>Sanjeevan</td>
+          <td>Vijayakumar</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" id="prodImg4" name="prodImg" value="Galaxy BudsLive"></td>
+          <td><img src="Image/buds1.jpg"  width="100" alt="" width=""></td>
+          <td>Sanjeevan</td>
+          <td>Vijayakumar</td>
+          <td>3</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+
+  </div>
+  <div class="static">
+    <button >Submit</button>
+  </div>
+</div>
+
+
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+</body>
+</html>

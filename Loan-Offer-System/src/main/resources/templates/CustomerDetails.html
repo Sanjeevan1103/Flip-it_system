@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<style>
+    /*Google Font*/
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&display=swap');
+*{
+    font-family:"Quicksand", sans-serif;
+    margin: 0;
+    padding:0;
+    scroll-padding-top:2rem;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+    list-style:none;
+    text-decoration:none;
+}
+
+/*Variables*/
+:root{
+--text-color:#161616;
+--hover-color:hsl(0,0%,14%);
+--bg-color:#fff;
+--Btn-color:#e53935;
+}
+
+html::-webkit-scrollbar{
+width:0.5rem;
+background:#2e2e2e;}
+
+html::-webkit-scrollbar-thumb{
+width:0.5rem;
+background:#2e2e2e;}
+img{
+width:100%;
+}
+
+body{
+color:var(--text-color);
+}
+
+.main{
+overflow-x:hidden;
+}
+
+section{
+padding : 4rem 0 3rem;
+}
+
+.container{
+width:100%;
+margin:auto;
+}
+ header{
+display :block;
+width:100%;
+position:fixed;
+top:0;
+left:0;
+z-index:100;
+}
+
+header .shadow{
+background: var(--bg-color);
+box-shadow: 1px 2px 4px rgb(15 54 55 / 10%);
+transition: 0.2s;
+}
+
+
+.logo img{
+width:41px;
+}
+
+.nav{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:10px 0;
+
+    background: #F5F5F5;
+    padding: 3px 2% 0% 1%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-radius:0.4rem;
+}
+
+
+#menu-icon{
+font-size:24px;
+cursor:pointer;
+display:none;
+}
+
+.navbar{
+display:flex;
+column-gap:2rem;
+}
+
+.navbar a{
+font-size:1rem;
+font-weight:500;
+background: linear-gradient(#161616,red);
+color:transparent;
+-webkit-background-clip:text;
+background-clip:text;
+}
+
+.navbar a:hover{
+color:var(--text-color);
+}
+
+    /*Home*/
+  .home-content{
+    min-height:600px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    align-items:center;
+    gap:2rem;
+  }
+
+  .home-text h1{
+    font-size:3.4rem;
+    margin-bottom:1rem;
+  }
+
+  .home-text p{
+  margin-bottom:1rem;
+  }
+
+  .btn{
+  display:inline-flex;
+  align-items:center;
+  column-gap:0.5rem;
+  background:var( --Btn-color);
+   text-align: center;
+  color: var(--bg-color);
+  padding:16px 24px;
+  border-radius:0.4rem;
+  }
+
+ .btnShop{
+  display:inline-flex;
+  align-items:center;
+  column-gap:0.5rem;
+  background:#7E57C2;
+  color:#fff;
+   text-align: center;
+  padding:16px 24px;
+  border-radius:0.8rem;
+border-color:#7E57C2;
+  }
+
+  .btnNav{
+  display:inline-flex;
+  align-items:center;
+  column-gap:0.5rem;
+  background:transparent;
+   text-align: center;
+  color: Red;
+  padding:16px 24px;
+  border-radius:0.4rem;
+  }
+
+    .btn .bx{
+    font-size:1.4rem;
+    }
+
+
+    .btn:hover{
+    background: #fa6464;
+    }
+    .heading{
+    text-align: center;
+    font-size:3.0rem;
+    background: linear-gradient(#161616,#546e7a);
+    color:transparent;
+    -webkit-background-clip:text;
+    background-clip:text;
+    margin-top:-1rem;
+    margin-bottom:2rem;
+    }
+
+    .specs-container{
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:1rem;
+    align-items:center;
+    }
+
+    .specs-details{
+    display: grid;
+    row-gap:1.4rem;
+    }
+
+    .specs-details .box .bx{
+      font-size:1.8rem;
+    }
+
+    .specs-details .box h3{
+    font-size:1.2rem;
+     }
+
+    .specs-details p{
+    margin-top:0.5rem;
+    }
+
+    .shop-container{
+    display:grid;
+    grid-template-columns: repeat(5,164px);
+    justify-content:center;
+    gap:3rem;
+
+    }
+
+    .shop-containerPanel{
+    display:grid;
+    grid-template-columns: repeat(5,164px);
+    justify-content:center;
+    gap:3rem;
+    background:#c5c0e3;
+    color: #000;
+    border-radius:1rem;
+    margin-bottom :1px;
+    padding:20px;
+    }
+
+    .loan-container{
+    display:grid;
+    grid-template-columns: 1000px max-content;
+    justify-content:center;
+    gap:3rem;
+    column-gep:5rem;
+    background:var(--hover-color);
+    color: var(--bg-color);
+    border-radius:1rem;
+    margin-bottom :10px;
+    }
+
+    .shop-container .box{
+    position: relative;
+    padding:10px;
+    width:200px;
+    background:var(--bg-color);
+    box-shadow: 0 5px 8px rgb(15 54 55 /10%);
+    border-radius:0.5rem;
+    height:300px;
+    display:grid;
+    margin-top:0px;
+    margin-bottom:100px;
+    }
+
+    .shop-container .box img{
+    width:150px;
+    height:150px;
+    object-fit:contain;
+    object-position:center;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:1rem;
+    }
+
+.shop-container .box h3{
+font-size: 0.9rem
+}
+.shop-container .box span{
+font-weight: 500;
+}
+
+.shop-container .box .bx:hover{
+background: #e53935;
+}
+
+.buds-container{
+display :grid;
+grid-template-columns: 500px max-content;
+justify-content:center;
+align-items:center;
+column-gep:5rem;
+background:var(--hover-color);
+color: var(--bg-color);
+border-radius:0.5rem;
+margin-bottom :50px;
+}
+
+.buds-img img{
+width:430px;
+}
+.LoanTimer{
+width:200px;
+}
+.Footer-img{
+width:150px;
+margin-left:80px;
+}
+.buds-text h2{
+font-size:1.4rem;
+font-weight:500;
+margin-bottom:0.5rem;
+}
+.buds-text span{
+font-weight:400;
+}
+.buds-text  p{
+margin: 1rem 0 1rem;
+}
+.loan-container{
+display :grid;
+grid-template-columns:repeat(auto-fit, minmax(30px,auto));
+justify-content:center;
+align-items:center;
+column-gep:5rem;
+background:var(--hover-color);
+color: var(--bg-color);
+border-radius:0.5rem;
+margin-bottom :50px;
+}
+
+.loan-img img{
+width:600px;
+align-items:left;
+margin-top:100px;
+}
+.shop-img img{
+width:400px;
+align-items:left;
+margin-top:10px;
+}
+.loan-text h2,shop-text h2{
+font-size:1.4rem;
+font-weight:900;
+margin-bottom:0.5rem;
+}
+.shop-text{
+font-size:1.4rem;
+font-weight:500;
+width:500px;
+color:#311B92;
+ text-align: Right;
+margin-bottom:10px;
+}
+.loan-text span,shop-text span{
+font-weight:400;
+}
+.loan-text  p,shop-text p{
+margin: 1rem 0 1rem;
+}
+.Footer{
+display:grid;
+grid-template-columns:repeat(auto-fit, minmax(10px,auto));
+gap:1rem;
+background:#E0E0E0;
+}
+.Footer-box{
+display:flex;
+flex-direction:column;
+
+}
+
+#CustomerDetails{
+margin: 0px;
+}
+
+
+.Footer-box h2{
+font-size:1.2rem;
+font-weight:600;
+margin-bottom:1rem;
+}
+.Footer-box a
+{
+    color#fff;
+    margin-bottom:4px;
+}
+
+.copyright
+{
+    text-align: center;
+    padding: 15px;
+}
+
+@media (max-weidth:1080px)
+{
+    section
+    {
+        padding:50px 0;
+    }
+    .home-text h1
+    {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width:768px)
+{
+.logo img {
+width:30px;
+}
+#menu-icon{
+display:inital;
+z-index:150;
+}
+
+.columnLoan {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.rowLoan:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.shop-containerPanel img{
+ width:750px;
+    height:150px;
+}
+
+.column {
+  float: center;
+  width: 1%;
+  padding: 10px;
+  height: 100px; /* Should be removed. Only for demonstration */
+}
+.navbar{
+position:absolute;
+top:0;
+left:0;
+right:0;
+background:var(--bg-color);
+display:flex;
+flex-direction:column;
+text-align:center;
+box-shadow:0 5px 8px rgb(15 54 55 /10%);
+}
+.navbar a {
+display: block;
+padding:12px;
+}
+.navbar .active{
+clip-path:circle(144% at 50% 0);
+}
+}
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button1 {background-color: #4CAF50;} /* Green */
+</style>
+<style>
+  * {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+</style>
+<body>
+<div class="main">
+    <section>
+        <header>
+            <div class="nav container">
+                <a href="#" class="logo">
+                    <img src="beatsLogo.png" alt="">
+                </a>
+                <i class='bx bx-menu' id="menu-icon"></i>
+                <ul class="navbar">
+                    <li><button class="btn"  onclick="Home();" >Home</button></li>
+
+                    <li><button class="btn" onclick="Login();" >Login</button></li>
+                </ul>
+            </div>
+        </header>
+    </section>
+     <section class="CustomerDetails" >
+
+            <div class="container mt-3">
+                <h2>Stacked form</h2>
+                <form action="/action_page.php">
+                    <div class="mb-3 mt-3">
+                        <label>First Name:</label>
+                        <input type="text" class="form-control" id="fname" placeholder="Enter First Name" name="FirstName">
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label>First Name:</label>
+                        <input type="text" class="form-control" id="lname" placeholder="Enter Last Name" name="LastName">
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label>Date of Birth:</label>
+                        <input type="text" class="form-control" id="dob" placeholder="Enter Date of Birth" name="DateofBirth">
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label>User Type:</label>
+                        <input type="text" class="form-control" id="usertype" placeholder="Enter User Type" name="usertype">
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label>User Name:</label>
+                        <input type="text" class="form-control" id="username" placeholder="Enter User Name" name="username">
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label>Email:</label>
+                        <input type="text" class="form-control" id="useremail" placeholder="Enter Email" name="useremail">
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label>Mobile Number:</label>
+                        <input type="text" class="form-control" id="mobilenumber" placeholder="Enter Moblie Number" name="mobilenumber">
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label>NIC:</label>
+                        <input type="text" class="form-control" id="nic" placeholder="Enter NIC" name="nic">
+                    </div>
+
+                    <div class="form-check mb-3">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="checkbox" name="remember"> Remember me
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </section>
+</div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+  body{
+background:#fe5f35;
+}
+.div1{
+justify-content:center;
+align-items:center;
+}
+.img{
+top:50%;
+}
+ .btn{
+  display:inline-flex;
+  align-items:center;
+  column-gap:0.5rem;
+  background:#fc4a0a;
+   text-align: center;
+  color:white;
+  padding:16px 24px;
+  border-radius:0.4rem;
+  border-color:#fc4a0a;
+  margin:20px;
+font-size:1.0rem;
+
+
+  }
+ .btn:hover{
+    background: #fb5a2a;
+    color: white;
+    }
+</style>
+<body>
+<div class="img" >
+   <center>
+       <img  src="Image/404.jpg"/>
+   </center>
+    <center>
+        <button onclick="Login()" class="btn" >Back to LoginPage</button>
+    </center>
+
+</div>
+<script>
+      function Login(){
+
+localStorage.clear();
+	window.location.href = "index.html";
+}
+</script>
+</body>
+</html>
